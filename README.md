@@ -5,6 +5,8 @@
  > Your author list below should include links to all members GitHub (remove existing author).
  
  > Authors: \<[Jackson Hoke](https://github.com/JacksonMHoke)\>
+ > \<[Grace Lee](https://github.com/glee139)\>
+ > \<[Woovin Youn](https://github.com/groovinwoovin)\>
  
  > You will be forming a group of **THREE** students and working on an interesting project. A list of proposed project ideas that have been successful in previous quarters is given in the project specifications link on iLearn. You can select an idea from the list and decide which design patterns you will use to implement it. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal. Your project needs to implement two design patterns.The project work should be divided almost equally among team members and each member is expected to work on at least one design pattern (more than one partner may work on a pattern) and some of its test cases. You can of course help each other, but it needs to be clear who will be responsible for which patterns and for which features.
  
