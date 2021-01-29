@@ -1,56 +1,15 @@
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\>"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # Chess
- > Your author list below should include links to all members GitHub (remove existing author).
  
  > Authors: \<[Jackson Hoke](https://github.com/JacksonMHoke)\>
  > \<[Grace Lee](https://github.com/glee139)\>
  > \<[Woovin Youn](https://github.com/groovinwoovin)\>
- 
- > You will be forming a group of **THREE** students and working on an interesting project. A list of proposed project ideas that have been successful in previous quarters is given in the project specifications link on iLearn. You can select an idea from the list and decide which design patterns you will use to implement it. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal. Your project needs to implement two design patterns.The project work should be divided almost equally among team members and each member is expected to work on at least one design pattern (more than one partner may work on a pattern) and some of its test cases. You can of course help each other, but it needs to be clear who will be responsible for which patterns and for which features.
- 
- > ## Expectations
- > * Incorporate **at least two** distinct design patterns. You need to include at least *one* design pattern that we will teach this session:
- >   * Composite, Strategy, Abstract Factory, Visitor, or Decorator
- > * All design patterns need to be linked together (it can't be two distinct projects)
- > * Your project should be implemented in C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
- > * You can incorporate additional technologies/tools but they must be approved (in writing) by the instructor or the TA.
- > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
-> * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group.
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include
- >    * For our project we are making a pvp chess game.
- > * Why is it important or interesting to you?
- >    * We all enjoy playing games and it seemed interesting to make one that seemed feasible.
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >    * [C++] - Coding language
- > * What will be the input/output of your project?
- >    * Input will be the player moves through text(maybe mouse if extra time)
- >    * Output will be the board through terminal(graphics if we have time)
- > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
- >    * Composite
- >      * We chose the composite pattern.
- >      * Why you picked this pattern and what feature you will implement with it
- >        * We chose composite because it seemed to fit well with the heirarchy of chess due to the nature of players controlling the board and the board controlling the pieces.
- >      * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
- >        * We are working with a complex tree structure that contains all the different pieces.
- >      * Why the chosen design pattern will lead to a good solution to that problem
- >        * The composite pattern allows us to utilize polymorphism to create a common interface that will let us operate on all of the pieces more easily.
- >   * Visitor
- >      * We chose the visitor pattern as well.
- >      * Why you picked this pattern and what feature you will implement with it
- >        * We can use the visitor class to implement the different ways each piece moves, if a move is valid, if a move puts king into check, etc. This allows us to shift 
-         a lot of the burden from each piece to a singular visitor class for each of these operations.
- >      * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
- >        * We anticipated a lot of clutter with having all the functionality inside the each piece class such as moving, checking if a move is valid, etc
- >      * Why the chosen design pattern will lead to a good solution to that problem
- >        * This design pattern will allow us to move a lot of the functionality in each piece to a seperate visitor class. This will eliminate a lot of the clutter in each
- >        piece class.
- >   
- >   
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+ > For our project we are making a pvp chess game where you can move your pieces through the terminal(if we have time we will try to add an interface to play through). We all enjoy playing games and chess seemed interesting to make one that seemed feasible and relatable. We will be using C++ as our main coding language. As for external libraries, at this moment we do not plan on using any. The player input will be the chess moves through the terminal(with mouse if we have time), and the output will be the board through terminal using different letters to represent the pieces(board graphics if we have time)
+ 
+ > For one of our design patterns, we plan to use the Composite design pattern. We chose composite pattern because it seemed to fit well with the heirarchy of chess due to the nature of players controlling the board, the board controlling the pieces, and the plethora of seperate pieces that have similar uses. Since we are working with a complex tree structure that contains all the different pieces, the composite pattern allows us to utilize polymorphism to create a common interface that will let us operate on all of the pieces more easily. This will also help us implement the other design pattern we plan to use.
+ 
+ > For the second design pattern we chose to use the Visitor pattern. We will use the visitor class to implement the different ways each piece moves, if a move is valid, if a move puts king into check, etc. This allows us to shift a lot of the burden from each piece to a singular visitor class for each of these operations. Since we anticipated a lot of clutter with having all the functionality inside the each piece class such as moving, checking if a move is valid, etc, this design pattern will allow us to move a lot of the functionality in each piece to a seperate visitor class. This will eliminate a lot of the clutter in each piece class.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
