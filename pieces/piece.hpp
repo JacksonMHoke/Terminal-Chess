@@ -3,7 +3,7 @@
 
 class Piece {
     private:
-        //MovementBehavior* mBeh;
+        //MovementBehavior* moveB;
         char letter;
         char number;
         char color;
