@@ -5,7 +5,7 @@
 
 class Pawn : public Piece {
     public:
-        Pawn(char l, char n, char c, MovementBehavior* move=nullptr, Board* b=nullptr) : Piece(l, n, c, move, b) {}
+        Pawn(char l, char n, char c, char p, MovementBehavior* move=nullptr, Board* b=nullptr) : Piece(l, n, c, p, move, b) {}
         //TODO move function
         virtual bool move(const char l, const char n) { return true; }
         virtual void set_behavior(Board* b) {

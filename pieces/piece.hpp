@@ -12,9 +12,11 @@ class Piece {
         char letter;
         char number;
         char color;
+        char piece;
     public:
         virtual bool move(const char l, const char n) = 0;
-        Piece(char l, char n, char c, MovementBehavior* move=nullptr, Board* b=nullptr) {
+        Piece(char l, char n, char c, char p, MovementBehavior* move=nullptr, Board* b=nullptr) {
+            piece=p;
             letter=l;
             number=n;
             color=c;
