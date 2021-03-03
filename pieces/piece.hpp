@@ -1,8 +1,8 @@
 #ifndef __PIECE_HPP__
 #define __PIECE_HPP__
 
-#include "MovementBehavior.hpp"
-#include "board.hpp"
+#include "../movement/MovementBehavior.hpp"
+#include "../board.hpp"
 #include <stdexcept>
 
 using std::vector;
