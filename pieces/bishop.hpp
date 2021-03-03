@@ -20,7 +20,6 @@ class Bishop : public Piece {
         }
 
         //sets movement behavior for pawn
-        virtual bool move(const char l, const char n) { return true; }
         virtual void set_behavior(Board* b) {
             //moveB.push_back(new Diagonal(b));
         }

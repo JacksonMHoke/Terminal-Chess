@@ -28,11 +28,17 @@ class Board {
         }
 
         //return the piece at cell (l, n)
-        Piece getCell(char l, char n) {
-            return board[n-'1'][l-'a'];
+        //if l or n are out of bounds returns nullptr
+        Piece* getCell(char l, char n) {
+            if (l>'h' || n>'8') return nullptr;
+            return &board[n-'1'][l-'a'];
         }
 
+        int getHeight() { return board[0].size(); }
+        int getWidth() { return board.size(); }
+
         void move(char startL, char startN, char endL, char endN) {
+            //turn char coords into 0-8 index coords
             int startRow=startN-'1';
             int startCol=startL-'a';
             int endRow=endN-'1';
