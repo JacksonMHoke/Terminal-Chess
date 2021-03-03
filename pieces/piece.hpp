@@ -49,4 +49,13 @@ class Piece {
         char getPiece() { return piece; } //returns char that will represent piece when displaying
 };
 
+//import all the other piece classes here so the only include needed will be piece when using
+//any of the piece classes
+#include "pawn.hpp"
+#include "rook.hpp"
+#include "king.hpp"
+#include "queen.hpp"
+#include "knight.hpp"
+#include "bishop.hpp"
+
 #endif //__PIECE_HPP__
