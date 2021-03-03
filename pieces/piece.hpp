@@ -1,7 +1,7 @@
 #ifndef __PIECE_HPP__
 #define __PIECE_HPP__
 
-#include "movement_behavior.hpp"
+#include "MovementBehavior.hpp"
 #include "board.hpp"
 #include <stdexcept>
 
@@ -45,7 +45,6 @@ class Piece {
         void setRow(char n) { number=n; }
         void setCol(char l) { letter=l; }
         char getColor() { return color; }
-
         char getPiece() { return piece; } //returns char that will represent piece when displaying
 };
 
