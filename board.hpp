@@ -60,10 +60,10 @@ class Board {
                 for (int j=0; j<board[0].size(); ++j) {
                     //if white is moving next
                     if (c=='w') {
-                        if (!board[board.size()-1-i][j]) cout << "*"
+                        if (!board[board.size()-1-i][j]) cout << "*";
                         else cout << board[board.size()-1-i][j].getPiece();
                     } else { //if black is moving next
-                        if (!board[i][board[0].size()-1-j]) cout << "*"
+                        if (!board[i][board[0].size()-1-j]) cout << "*";
                         else cout << board[i][board[0].size()-1-i].getPiece();
                     }
                 }

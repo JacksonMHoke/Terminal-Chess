@@ -148,6 +148,7 @@ class MovementBehavior {
 					}
 				}
 			}
+			return nullptr;
 		}
 	public:
 		MovementBehavior(Board* b) { board=b; }
