@@ -14,7 +14,6 @@ class Piece {
         char color;
         char piece;
     public:
-        virtual bool move(const char l, const char n) = 0;
         Piece(char l, char n, char c, char p, MovementBehavior* move=nullptr, Board* b=nullptr) {
             piece=p;
             letter=l;
@@ -25,7 +24,22 @@ class Piece {
             if(move) moveB.push_back(move);
             if(b) set_behavior(b);
         }
+
+        //adds the corresponding movement behaviors to the moveB vector
         virtual void set_behavior(Board* b)=0;
+
+        //calls all movement behaviors in the moveB vector, if one works return true, otherwise return false
+        virtual bool move(char l, char n) = 0;
+
+        //getters and setters
+        char getRow() { return number; }
+        char getCol() { return letter; }
+        void setRow(char n) { number=n; }
+        void setCol(char l) { letter=l; }
+        char getColor() { return color; }
+        char getPiece() { return piece; } //returns char that will represent piece when displaying
+
+
 };
 
 #endif //__PIECE_HPP__
