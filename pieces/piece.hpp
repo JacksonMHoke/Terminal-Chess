@@ -3,8 +3,10 @@
 
 #include "movement_behavior.hpp"
 #include "board.hpp"
+#include <stdexcept>
 
 using std::vector;
+using std::logic_error;
 
 class Piece {
     protected:
@@ -25,6 +27,12 @@ class Piece {
             if(b) set_behavior(b);
         }
 
+        virtual ~Piece() {
+            for (auto mb : moveB) {
+                delete mb;
+            }
+        }
+
         //adds the corresponding movement behaviors to the moveB vector
         virtual void set_behavior(Board* b)=0;
 
@@ -37,9 +45,8 @@ class Piece {
         void setRow(char n) { number=n; }
         void setCol(char l) { letter=l; }
         char getColor() { return color; }
+
         char getPiece() { return piece; } //returns char that will represent piece when displaying
-
-
 };
 
 #endif //__PIECE_HPP__
