@@ -20,12 +20,7 @@ class MovementBehavior {
 			Piece* k=findKing(c);
 			char kR=k->getRow();
 			char kC=k->getCol();
-
-			//will turn capital to lowercase
-			int offset=0;
-			//if pieces to check are capital increase offset to 32 to turn to lowercase
-			if (c=='b') offset+=32;
-
+			
 			return knightCheck(kR, kC, c) || diagCheck(kR, kC, c) || straightCheck(kR, kC, c);
 		}
 
