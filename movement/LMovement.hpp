@@ -7,8 +7,10 @@ class LMovement : public MovementBehavior {
 private:
 
 public:
-	//TODO - Implement requirements and actions
-        virtual bool move(char x1, char y1, char x2, char y2);	
+        virtual bool move(char x1, char y1, char x2, char y2) {
+		// Check if the movement is an L
+		if(((abs(x1 - x2) == 2) && (abs(y1 - y2) == 1))
+	}
 }
 
 
