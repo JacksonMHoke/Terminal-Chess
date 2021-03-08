@@ -2,8 +2,8 @@
 #define CLASSICBOARDFACTORY_HPP
 
 #include <iostream>
-#include "BoardFactory.h"
-#include "Board.h"
+#include "BoardFactory.hpp"
+#include "Board.hpp"
 class ClassicBoardFactory extends BoardFactory{
 	private:
 		pieces[][];
