@@ -1,7 +1,7 @@
 #ifndef HOARDBOARDFACTORY_HPP
 #define HOARDBOARDFACTORY_HPP
-#include "Board.h"
-#include "BoardFactory.h"
+#include "Board.hpp"
+#include "BoardFactory.hpp"
 
 class HoardBoardFactory : BoardFactory{
 	private:
