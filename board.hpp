@@ -44,7 +44,7 @@ class Board {
             int endRow=endN-'1';
             int endCol=endL-'a';
             //if there is a piece at (endL, endN) delete it to avoid memory leaks
-            if (!board[endRow][endCol]) delete board[endRow][endCol];
+            if (board[endRow][endCol]) delete board[endRow][endCol];
 
             //change piece coords
             board[startRow][startCol].setRow(endN);
