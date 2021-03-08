@@ -14,7 +14,7 @@
  > For the second design pattern we chose to use the Factory Method pattern. We will use the Factory Method class to create the different pieces at the beginning of the game. After designing the basic chess game, we want to implement different variants of it and anticipated on having to hard code for each variant within the Game class. But with the Factory Method class, we can implement each type of variant as its own class and inherit from a base factory class.
 
 ## Class Diagram
-![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/Chess.png)
+![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/Chess_Diagram.png)
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
