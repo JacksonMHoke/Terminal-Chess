@@ -5,8 +5,6 @@
 #include "BoardFactory.hpp"
 #include "Board.hpp"
 class ClassicBoardFactory extends BoardFactory{
-	private:
-		pieces[][];
 	public:
 		ClassicBoardFactory();
 		virtual Board createBoard(){
