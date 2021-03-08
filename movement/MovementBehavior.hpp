@@ -13,7 +13,7 @@ using std::vector;
 using std::pair;
 
 class MovementBehavior {
-	private:
+	protected:
 		Board* board;
 
 		//if king is in check return true, otherwise return false
