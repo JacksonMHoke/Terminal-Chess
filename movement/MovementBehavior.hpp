@@ -1,11 +1,13 @@
-#ifndef __MOVEMENT_HPP__
-#define __MOVEMENT_HPP__
+#ifndef __MOVEMENTBEHAVIOR_HPP__
+#define __MOVEMENTBEHAVIOR_HPP__
+
 
 #include "../board.hpp"
 #include "../pieces/piece.hpp"
 #include <vector>
 #include <pair>
 #include <cctype>
+#include <stdlib.h>
 
 using std::vector;
 using std::pair;
