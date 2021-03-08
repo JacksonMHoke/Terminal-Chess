@@ -1,6 +1,6 @@
 #ifndef BOARDFACTORY_HPP
 #define BOARDFACTORY_HPP
-#include "Board.h"
+#include "Board.hpp"
 
 class BoardFactory : Game{
 	public:
