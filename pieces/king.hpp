@@ -5,7 +5,7 @@
 #include "../movement/VicinityMovement.hpp"
 class King : public Piece {
     public:
-        King(char l, char n, char c, char p, Board b) : Piece(l, n, c, p) {
+        King(char l, char n, char c, char p, Board* b) : Piece(l, n, c, p) {
             set_behavior(b);
         }
         
@@ -22,8 +22,8 @@ class King : public Piece {
         }
 
         //sets movement behavior for king
-        virtual void set_behavior(Board& b) {
-            moveB.push_back(new VicinityMovement(&b));
+        virtual void set_behavior(Board* b) {
+            moveB.push_back(new VicinityMovement(b));
         }
 };
 

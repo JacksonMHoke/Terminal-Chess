@@ -16,7 +16,9 @@ void Board::addPiece(Piece* p)  {
 }
 
 Piece* Board::getCell(char l, char n)  {
-    if (l>'h' || n>'8') return nullptr;
+    if (l>'h' || n>'8' || l<'a' || n<'1') {
+        return nullptr;
+    }
     return board[n-'1'][l-'a'];
 }
 

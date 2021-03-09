@@ -7,7 +7,9 @@
 
 class Rook : public Piece {
     public:
-        Rook(char l, char n, char c, char p, Board& b) : Piece(l, n, c, p) {}
+        Rook(char l, char n, char c, char p, Board* b) : Piece(l, n, c, p) {
+            set_behavior(b);
+        }
 
         //tries to move to (l,n) for all movement behaviors
         //returns true if the move is valid, false if invalid
@@ -22,9 +24,9 @@ class Rook : public Piece {
         }
 
         //sets movement behavior for rook
-        virtual void set_behavior(Board& b) {
-            moveB.push_back(new HorizontalMovement(&b));
-            moveB.push_back(new VerticalMovement(&b));
+        virtual void set_behavior(Board* b) {
+            moveB.push_back(new HorizontalMovement(b));
+            moveB.push_back(new VerticalMovement(b));
         }
 };
 

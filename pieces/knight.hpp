@@ -6,7 +6,7 @@
 
 class Knight : public Piece {
     public:
-        Knight(char l, char n, char c, char p, Board& b) : Piece(l, n, c, p) {
+        Knight(char l, char n, char c, char p, Board* b) : Piece(l, n, c, p) {
             set_behavior(b);
         }
         
@@ -23,8 +23,8 @@ class Knight : public Piece {
         }
 
         //sets movement behavior for knight
-        virtual void set_behavior(Board& b) {
-            moveB.push_back(new LMovement(&b));
+        virtual void set_behavior(Board* b) {
+            moveB.push_back(new LMovement(b));
         }
 };
 
