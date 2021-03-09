@@ -2,9 +2,9 @@
 #define BOARDFACTORY_HPP
 #include "Board.hpp"
 
-class BoardFactory : Game{
+class BoardFactory {
 	public:
-		BoardFactory();
+		BoardFactory() {}
 		virtual Board createBoard()=0;
 };
 

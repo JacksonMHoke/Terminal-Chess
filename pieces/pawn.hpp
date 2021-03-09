@@ -2,10 +2,14 @@
 #define __PAWN_HPP__
 
 #include "piece.hpp"
+#include "../movement/PawnDiagonal.hpp"
+#include "../movement/SingleForward.hpp"
 
 class Pawn : public Piece {
     public:
-        Pawn(char l, char n, char c, char p, MovementBehavior move=nullptr, Board* b=nullptr) : Piece(l, n, c, p, move, b) {}
+        Pawn(char l, char n, char c, char p, Board& b) : Piece(l, n, c, p) {
+            set_behavior(b);
+        }
 
         //tries to move to (l,n) for all movement behaviors
         //returns true if the move is valid, false if invalid
@@ -14,15 +18,15 @@ class Pawn : public Piece {
             //tries all movement behavior to see if one works
             //returns true if one works, false if all fail
             for (int i=0; i<moveB.size(); ++i) {
-                if (moveB[i].move(letter, number, l, n)) return true;
+                if (moveB[i]->move(letter, number, l, n)) return true;
             }
             return false;
         }
 
         //sets movement behavior for pawn
-        virtual void set_behavior(Board* b) {
-            moveB.push_back(PawnDiagonal(b));
-            moveB.push_back(SingleForward(b));
+        virtual void set_behavior(Board& b) {
+            moveB.push_back(new PawnDiagonal(&b));
+            moveB.push_back(new SingleForward(&b));
         }
 };
 
