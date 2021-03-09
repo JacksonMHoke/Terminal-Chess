@@ -5,7 +5,7 @@
 #include "../board.hpp"
 #include "../pieces/piece.hpp"
 #include <vector>
-#include <pair>
+#include <utility>
 #include <cctype>
 #include <stdlib.h>
 
@@ -151,5 +151,13 @@ class MovementBehavior {
 		MovementBehavior(Board* b) { board=b; }
 		virtual bool move(char, char, char, char) = 0;
 };
+
+#include "VerticalMovement.hpp"
+#include "HorizontalMovement.hpp"
+#include "LMovement.hpp"
+#include "PawnDiagonal.hpp"
+#include "SingleForward.hpp"
+#include "VicinityMovement.hpp"
+#include "DiagonalMovement.hpp"
 
 #endif

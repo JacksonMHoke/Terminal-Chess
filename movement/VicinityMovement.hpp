@@ -30,6 +30,6 @@ public:
 			return true;
 		}
 	}
-}
+};
 
 #endif
