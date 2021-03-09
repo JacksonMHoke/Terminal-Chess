@@ -29,6 +29,7 @@ public:
 			} else delete temp;
 			return true;
 		}
+		return false;
 	}
 };
 

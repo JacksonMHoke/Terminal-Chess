@@ -49,7 +49,8 @@ public:
                                 } else delete temp;
                                 return true;
                         }
-                } else { return false; }
+                }
+                return false;
 	}
 };
 
