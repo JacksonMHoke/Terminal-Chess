@@ -5,7 +5,7 @@
 class BoardFactory {
 	public:
 		BoardFactory() {}
-		virtual Board createBoard()=0;
+		virtual Board* createBoard()=0;
 };
 
 #endif

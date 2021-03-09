@@ -18,7 +18,7 @@ using std::tolower;
 int main () {
     //initialize the board
     BoardFactory* fact;
-    Board b;
+    Board* b;
     
     //ask what type of board to play on
     do {
@@ -34,7 +34,34 @@ int main () {
         }
     } while (true);
     //use factory chosen to creat board
+
     b=fact->createBoard();
 
-    b.drawBoard('w');
+    b->drawBoard('w');
+    cout << endl;
+
+    b->getCell('e','2')->move('e','3');
+
+    b->drawBoard('w');
+    cout << endl;
+
+    b->getCell('e', '3')->move('e','4');
+
+    b->drawBoard('w');
+    cout << endl;
+
+    b->getCell('e', '4')->move('e','5');
+
+    b->drawBoard('w');
+    cout << endl;
+
+    b->getCell('e', '5')->move('e','6');
+
+    b->drawBoard('w');
+    cout << endl;
+
+    b->getCell('e', '6')->move('f','7');
+
+    b->drawBoard('w');
+    cout << endl;
 }

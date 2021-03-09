@@ -120,8 +120,8 @@ Piece* MovementBehavior::findKing(char c) {
     for (int i=0; i<board->getHeight(); ++i) {
         for (int j=0; j<board->getWidth(); ++j) {
             //if piece is the correct king
-            if (board->getCell(i+'1', j+'a')->getColor()==c && (board->getCell(i+'1', j+'a')->getPiece()=='k' || board->getCell(i+'1', j+'a')->getPiece()=='K')) {
-                return board->getCell(i+'1', j+'a');
+            if (board->getCell(i+'a', j+'1')!=nullptr && board->getCell(i+'a', j+'1')->getColor()==c && (board->getCell(i+'a', j+'1')->getPiece()=='k' || board->getCell(i+'a', j+'1')->getPiece()=='K')) {
+                return board->getCell(i+'a', j+'1');
             }
         }
     }

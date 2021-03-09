@@ -26,7 +26,7 @@ class Piece {
         }
 
         //adds the corresponding movement behaviors to the moveB vector
-        virtual void set_behavior(Board& b)=0;
+        virtual void set_behavior(Board* b)=0;
 
         //calls all movement behaviors in the moveB vector, if one works return true, otherwise return false
         virtual bool move(char l, char n) = 0;

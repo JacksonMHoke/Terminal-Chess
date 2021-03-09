@@ -7,7 +7,7 @@
 
 class Pawn : public Piece {
     public:
-        Pawn(char l, char n, char c, char p, Board& b) : Piece(l, n, c, p) {
+        Pawn(char l, char n, char c, char p, Board* b) : Piece(l, n, c, p) {
             set_behavior(b);
         }
 
@@ -24,9 +24,9 @@ class Pawn : public Piece {
         }
 
         //sets movement behavior for pawn
-        virtual void set_behavior(Board& b) {
-            moveB.push_back(new PawnDiagonal(&b));
-            moveB.push_back(new SingleForward(&b));
+        virtual void set_behavior(Board* b) {
+            moveB.push_back(new PawnDiagonal(b));
+            moveB.push_back(new SingleForward(b));
         }
 };
 

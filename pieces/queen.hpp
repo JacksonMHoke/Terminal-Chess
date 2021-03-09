@@ -8,7 +8,9 @@
 
 class Queen : public Piece {
     public:
-        Queen(char l, char n, char c, char p, Board& b) : Piece(l, n, c, p) {}
+        Queen(char l, char n, char c, char p, Board* b) : Piece(l, n, c, p) {
+            set_behavior(b);
+        }
         
         //tries to move to (l,n) for all movement behaviors
         //returns true if the move is valid, false if invalid
@@ -23,10 +25,10 @@ class Queen : public Piece {
         }
 
         //sets movement behavior for queen
-        virtual void set_behavior(Board& b) {
-            moveB.push_back(new DiagonalMovement(&b));
-            moveB.push_back(new VerticalMovement(&b));
-            moveB.push_back(new HorizontalMovement(&b));
+        virtual void set_behavior(Board* b) {
+            moveB.push_back(new DiagonalMovement(b));
+            moveB.push_back(new VerticalMovement(b));
+            moveB.push_back(new HorizontalMovement(b));
         }
 };
 

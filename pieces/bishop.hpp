@@ -6,7 +6,7 @@
 
 class Bishop : public Piece {
     public:
-        Bishop(char l, char n, char c, char p, Board b) : Piece(l, n, c, p) {
+        Bishop(char l, char n, char c, char p, Board* b) : Piece(l, n, c, p) {
             set_behavior(b);
         }
         
@@ -23,8 +23,8 @@ class Bishop : public Piece {
         }
 
         //sets movement behavior for bishop
-        virtual void set_behavior(Board& b) {
-            moveB.push_back(new DiagonalMovement(&b));
+        virtual void set_behavior(Board* b) {
+            moveB.push_back(new DiagonalMovement(b));
         }
 };
 
