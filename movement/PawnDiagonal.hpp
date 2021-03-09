@@ -32,22 +32,18 @@ public:
 			else { return false; }
 		}
 		else {
-			cout << "pawn diag w" << endl;
 			if(board->getCell(l2, n2) == nullptr) { return false; }
 			if((abs(l1 - l2) == 1) && ((n1 - n2) == -1)) {
-				cout << "is valid" << endl;
 				//move to destination, if check revert
 				Piece* temp=nullptr;
 				if (board->getCell(l2,n2)!=nullptr) temp=board->getCell(l2,n2);
 				board->setCellNull(l2,n2); //to avoid deleting piece at that place
 				board->move(l1, n1, l2, n2);
 				if (isCheck(board->getCell(l2, n2)->getColor())) {
-					cout << "is check" << endl;
 					board->move(l2,n2,l1,n1);
 					board->addPiece(temp);
 					return false;
 				} else {
-					cout << "not in check" << endl;
 					delete temp;
 				}
 				return true;

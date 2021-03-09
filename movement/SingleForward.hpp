@@ -8,17 +8,17 @@ private:
 
 public:
 	SingleForward(Board* b) : MovementBehavior(b) {}
-	virtual bool move(char x1, char y1, char x2, char y2) {
-        if(x2 <= 'h' && x2 >= 'a' && y2 <= '8' && y2 >= '1') {
-			if(board->getCell(x1,y1)->getColor() == 'b') {
-				if(((x1 - x2) == 0) && ((y1 - y2) == 1) && board->getCell(x2,y2)==nullptr) {
+	virtual bool move(char l1, char n1, char l2, char n2) {
+        if(l2 <= 'h' && l2 >= 'a' && n2 <= '8' && n2 >= '1') {
+			if(board->getCell(l1,n1)->getColor() == 'b') {
+				if(((l1 - l2) == 0) && ((n1 - n2) == 1) && board->getCell(l2,n2)==nullptr) {
 					//move to destination, if check revert
 					Piece* temp=nullptr;
-					if (board->getCell(x2,y2)!=nullptr) temp=board->getCell(x2,y2);
-					board->setCellNull(x2,y2); //to avoid deleting piece at that place
-					board->move(x1, y1, x2, y2);
-					if (isCheck(board->getCell(x1, y1)->getColor())) {
-						board->move(x2,y2,x1,y1);
+					if (board->getCell(l2,n2)!=nullptr) temp=board->getCell(l2,n2);
+					board->setCellNull(l2,n2); //to avoid deleting piece at that place
+					board->move(l1, n1, l2, n2);
+					if (isCheck(board->getCell(l1, n1)->getColor())) {
+						board->move(l2,n2,l1,n1);
 						board->addPiece(temp);
 						return false;
 					} else delete temp;
@@ -27,15 +27,15 @@ public:
 				else { return false; }
 			}
 			else {
-                if(((x1 - x2) == 0) && ((y1 - y2) == -1) && board->getCell(x2,y2)==nullptr) {
+                if(((l1 - l2) == 0) && ((n1 - n2) == -1) && board->getCell(l2,n2)==nullptr) {
 					//move to destination, if check revert
 					Piece* temp=nullptr;
-					if (board->getCell(x2,y2)!=nullptr) temp=board->getCell(x2,y2);
-					board->setCellNull(x2,y2); //to avoid deleting piece at that place
-					board->move(x1, y1, x2, y2);
+					if (board->getCell(l2,n2)!=nullptr) temp=board->getCell(l2,n2);
+					board->setCellNull(l2,n2); //to avoid deleting piece at that place
+					board->move(l1, n1, l2, n2);
 
-					if (isCheck(board->getCell(x2,y2)->getColor())) {
-						board->move(x2,y2,x1,y1);
+					if (isCheck(board->getCell(l2,n2)->getColor())) {
+						board->move(l2,n2,l1,n1);
 						board->addPiece(temp);
 						return false;
 					} else {
