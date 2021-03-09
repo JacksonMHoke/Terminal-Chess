@@ -11,10 +11,12 @@ using std::endl;
 
 class Board {
     private:
-        vector<vector<Piece>> board;
+        vector<vector<Piece*>> board;
     public:
         Board() {
+            board.resize(8);
             for (int i=0; i<board.size(); ++i) {
+                board[i].resize(8);
                 for (int j=0; j<board[0].size(); ++j) {
                     board[i][j]=nullptr;
                 }
@@ -24,14 +26,18 @@ class Board {
         //adds the piece into the board
             //uses info inside piece such as position
         void addPiece(Piece* p) {
-            board[p->getRow()-'1'][p->getCol()-'a']=*p;
+            board[p->getRow()-'1'][p->getCol()-'a']=p;
         }
 
         //return the piece at cell (l, n)
         //if l or n are out of bounds returns nullptr
         Piece* getCell(char l, char n) {
             if (l>'h' || n>'8') return nullptr;
-            return &board[n-'1'][l-'a'];
+            return board[n-'1'][l-'a'];
+        }
+
+        void setCellNull(char l, char n) {
+            board[n-'1'][l-'a']=nullptr;
         }
 
         int getHeight() { return board[0].size(); }
@@ -44,11 +50,11 @@ class Board {
             int endRow=endN-'1';
             int endCol=endL-'a';
             //if there is a piece at (endL, endN) delete it to avoid memory leaks
-            if (board[endRow][endCol]) delete board[endRow][endCol];
+            if (board[endRow][endCol]!=nullptr) delete board[endRow][endCol];
 
             //change piece coords
-            board[startRow][startCol].setRow(endN);
-            board[startRow][startCol].setCol(endL);
+            board[startRow][startCol]->setRow(endN);
+            board[startRow][startCol]->setCol(endL);
             //update board position
             board[endRow][endCol]=board[startRow][startCol];
             board[startRow][startCol]=nullptr;
@@ -60,11 +66,11 @@ class Board {
                 for (int j=0; j<board[0].size(); ++j) {
                     //if white is moving next
                     if (c=='w') {
-                        if (!board[board.size()-1-i][j]) cout << "*";
-                        else cout << board[board.size()-1-i][j].getPiece();
+                        if (board[board.size()-1-i][j]==nullptr) cout << "*";
+                        else cout << board[board.size()-1-i][j]->getPiece();
                     } else { //if black is moving next
-                        if (!board[i][board[0].size()-1-j]) cout << "*";
-                        else cout << board[i][board[0].size()-1-i].getPiece();
+                        if (board[i][board[0].size()-1-j]==nullptr) cout << "*";
+                        else cout << board[i][board[0].size()-1-i]->getPiece();
                     }
                 }
                 cout << endl;
