@@ -38,9 +38,9 @@ class ClassicBoardFactory extends BoardFactory{
 			board->addPiece(new Bishop('c', '8', 'b', 'b', nullptr, board));
 			board->addPiece(new Queen ('d', '8', 'b', 'q', nullptr, board));
 			board->addPiece(new King  ('e', '8', 'b', 'k', nullptr, board));
-			board->addPiece(new Bishop('f', '8', 'b', 'r', nullptr, board));
+			board->addPiece(new Bishop('f', '8', 'b', 'b', nullptr, board));
 			board->addPiece(new Knight('g', '8', 'b', 'n', nullptr, board));
-			board->addPiece(new Rook  ('h', '8', 'b', 'b', nullptr, board));
+			board->addPiece(new Rook  ('h', '8', 'b', 'r', nullptr, board));
 			return board;
 		}
 };
