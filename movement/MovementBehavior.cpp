@@ -3,6 +3,7 @@
 bool MovementBehavior::isCheck(char c) {
     //finds the king that we are validating
     Piece* k=findKing(c);
+    if (!k) return false;
     char kR=k->getRow();
     char kC=k->getCol();
     
@@ -26,7 +27,7 @@ bool MovementBehavior::knightCheck(char kR, char kC, char c) {
                                         pair<char, char>{kR-1, kC-2} };
     //looking for knights at positions where king could be in check
     for (int i=0; i<knightPos.size(); ++i) {
-        if (board->getCell(knightPos[i].first, knightPos[i].second) && board->getCell(knightPos[i].first, knightPos[i].second)->getPiece()+offset == 'n') {
+        if (board->getCell(knightPos[i].second, knightPos[i].first) && board->getCell(knightPos[i].second, knightPos[i].first)->getPiece()+offset == 'n') {
             return true;
         }
     }
@@ -42,35 +43,35 @@ bool MovementBehavior::diagCheck(char kR, char kC, char c) {
     //checking for pawns that could check
     int pawnOffset=1;
     if (c=='b') pawnOffset=-1;
-    if (board->getCell(kR+pawnOffset, kC+1) && board->getCell(kR+pawnOffset, kC+1)->getPiece()+offset=='p') return true;
-    if (board->getCell(kR+pawnOffset, kC-1) && board->getCell(kR+pawnOffset, kC-1)->getPiece()+offset=='p') return true;
+    if (board->getCell(kC+1, kR+pawnOffset) && board->getCell(kC+1, kR+pawnOffset)->getPiece()+offset=='p') return true;
+    if (board->getCell(kC-1, kR+pawnOffset) && board->getCell(kC-1, kR+pawnOffset)->getPiece()+offset=='p') return true;
 
     //checking for bishop and queen diagonals
     //if not opposing color bishop/queen found on one diagonal, there cannot exist a check past that point
     for (int i=1; i+kR<='8' && i+kC<='h'; ++i) {
-        if (board->getCell(kR+i, kC+i)) {
-            if (board->getCell(kR+i, kC+i)->getPiece()+offset!='q' && board->getCell(kR+i, kC+i)->getPiece()+offset!='b') break;
+        if (board->getCell(kC+i, kR+i)) {
+            if (board->getCell(kC+i, kR+i)->getPiece()+offset!='q' && board->getCell(kC+i, kR+i)->getPiece()+offset!='b') break;
             return true;
         }
     }
 
     for (int i=1; kR-i>='1' && i+kC<='h'; ++i) {
-        if (board->getCell(kR-i, kC+i)) {
-            if (board->getCell(kR-i, kC+i)->getPiece()+offset!='q' && board->getCell(kR-i, kC+i)->getPiece()+offset!='b') break;
+        if (board->getCell(kC+i, kR-i)) {
+            if (board->getCell(kC+i, kR-i)->getPiece()+offset!='q' && board->getCell(kC+i, kR-i)->getPiece()+offset!='b') break;
             return true;
         }
     }
 
     for (int i=1; kR-i>='1' && kC-i>='a'; ++i) {
-        if (board->getCell(kR-i, kC-i)) {
-            if (board->getCell(kR-i, kC-i)->getPiece()+offset!='q' && board->getCell(kR-i, kC-i)->getPiece()+offset!='b') break;
+        if (board->getCell(kC-i, kR-i)) {
+            if (board->getCell(kC-i, kR-i)->getPiece()+offset!='q' && board->getCell(kC-i, kR-i)->getPiece()+offset!='b') break;
             return true;
         }
     }
 
     for (int i=1; kR+i<='8' && kC-i>='a'; ++i) {
-        if (board->getCell(kR+i, kC-i)) {
-            if (board->getCell(kR+i, kC-i)->getPiece()+offset!='q' && board->getCell(kR+i, kC-i)->getPiece()+offset!='b') break;
+        if (board->getCell(kC-i, kR+i)) {
+            if (board->getCell(kC-i, kR+i)->getPiece()+offset!='q' && board->getCell(kC-i, kR+i)->getPiece()+offset!='b') break;
             return true;
         }
     }
@@ -86,29 +87,29 @@ bool MovementBehavior::straightCheck(char kR, char kC, char c) {
 
     //checks area above white king or below black king
     for (int i=kR+1; i<board->getHeight()+'1'; ++i) {
-        if (board->getCell(i, kC)) {
-            if (board->getCell(i, kC)->getPiece()+offset != 'q' && board->getCell(i, kC) && board->getCell(i, kC)->getPiece()+offset != 'r') break;
+        if (board->getCell(kC, i)) {
+            if (board->getCell(kC, i)->getPiece()+offset != 'q' && board->getCell(kC, i)->getPiece()+offset != 'r') break;
             return true;
         }
     }
     //checks area below white king or above black king
     for (int i=kR-1; i>='1'; --i) {
-        if (board->getCell(i, kC)) {
-            if (board->getCell(i, kC)->getPiece()+offset != 'q' && board->getCell(i, kC) && board->getCell(i, kC)->getPiece()+offset != 'r') break;
+        if (board->getCell(kC, i)) {
+            if (board->getCell(kC, i)->getPiece()+offset != 'q' && board->getCell(kC, i)->getPiece()+offset != 'r') break;
             return true;
         }
     }
     //checks area to the right of the white king or to the left of the black king
     for (int i=kC+1; i<board->getWidth()+'a'; ++i) {
-        if (board->getCell(kR, i)) {
-            if (board->getCell(kR, i)->getPiece()+offset != 'q' && board->getCell(kR, i) && board->getCell(kR, i)->getPiece()+offset != 'r') break;
+        if (board->getCell(i, kR)) {
+            if (board->getCell(i, kR)->getPiece()+offset != 'q' && board->getCell(i, kR)->getPiece()+offset != 'r') break;
             return true;
         }
     }
     //checks area to the right of the black king or to the left of the white king
     for (int i=kC-1; i>='a'; --i) {
-        if (board->getCell(kR, i)) {
-            if (board->getCell(kR, i)->getPiece()+offset != 'q' && board->getCell(kR, i) && board->getCell(kR, i)->getPiece()+offset != 'r') break;
+        if (board->getCell(i, kR)) {
+            if (board->getCell(i, kR)->getPiece()+offset != 'q' && board->getCell(i, kR)->getPiece()+offset != 'r') break;
             return true;
         }
     }
