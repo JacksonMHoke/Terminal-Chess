@@ -5,7 +5,7 @@
 
 class King : public Piece {
     public:
-        King(char l, char n, char c, char p, MovementBehavior* move=nullptr, Board* b=nullptr) : Piece(l, n, c, p, move, b) {}
+        King(char l, char n, char c, char p, MovementBehavior move=nullptr, Board* b=nullptr) : Piece(l, n, c, p, move, b) {}
         
         //tries to move to (l,n) for all movement behaviors
         //returns true if the move is valid, false if invalid
@@ -14,14 +14,14 @@ class King : public Piece {
             //tries all movement behavior to see if one works
             //returns true if one works, false if all fail
             for (int i=0; i<moveB.size(); ++i) {
-                if (moveB[i]->move(letter, number, l, n)) return true;
+                if (moveB[i].move(letter, number, l, n)) return true;
             }
             return false;
         }
 
-        //sets movement behavior for pawn
+        //sets movement behavior for king
         virtual void set_behavior(Board* b) {
-            //moveB.push_back(new VicinityMovement(b));
+            moveB.push_back(VicinityMovement(b));
         }
 };
 

@@ -19,8 +19,16 @@ public:
 				for(int i = 0; i < (x1 - x2); ++i) {
                                         if(board->getCell(x1 - i, y1) != nullptr) { return false; }
                                 }
-                                if (isCheck(board->getCell(x1, y1)->getColor())) return false;
-				board->move(x1, y1, x2, y2);
+                                //move to destination, if check revert
+                                Piece* temp=nullptr;
+                                if (board->getCell(x2,y2)!=nullptr) temp=board->getCell(x2,y2);
+                                board->setCellNull(x2,y2); //to avoid deleting piece at that place
+                                board->move(x1, y1, x2, y2);
+                                if (isCheck(board->getCell(x1, y1)->getColor())) {
+                                        board->move(x2,y2,x1,y1);
+                                        board->addPiece(temp);
+                                        return false;
+                                } else delete temp;
                                 return true;
                         }
                         // rightwards movement
@@ -29,12 +37,19 @@ public:
                                 for(int i = 0; i < abs(x1 - x2); ++i) {
                                         if(board->getCell(x1 + i, y1) != nullptr) { return false; }
                                 }
-                                if (isCheck(board->getCell(x1, y1)->getColor())) return false;
-				board->move(x1, y1, x2, y2);
+                                //move to destination, if check revert
+                                Piece* temp=nullptr;
+                                if (board->getCell(x2,y2)!=nullptr) temp=board->getCell(x2,y2);
+                                board->setCellNull(x2,y2); //to avoid deleting piece at that place
+                                board->move(x1, y1, x2, y2);
+                                if (isCheck(board->getCell(x1, y1)->getColor())) {
+                                        board->move(x2,y2,x1,y1);
+                                        board->addPiece(temp);
+                                        return false;
+                                } else delete temp;
                                 return true;
                         }
-		}
-		else { return false; }
+                } else { return false; }
 	}
 };
 

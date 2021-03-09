@@ -5,7 +5,7 @@
 
 class Rook : public Piece {
     public:
-        Rook(char l, char n, char c, char p, MovementBehavior* move=nullptr, Board* b=nullptr) : Piece(l, n, c, p, move, b) {}
+        Rook(char l, char n, char c, char p, MovementBehavior move=nullptr, Board* b=nullptr) : Piece(l, n, c, p, move, b) {}
 
         //tries to move to (l,n) for all movement behaviors
         //returns true if the move is valid, false if invalid
@@ -14,15 +14,15 @@ class Rook : public Piece {
             //tries all movement behavior to see if one works
             //returns true if one works, false if all fail
             for (int i=0; i<moveB.size(); ++i) {
-                if (moveB[i]->move(letter, number, l, n)) return true;
+                if (moveB[i].move(letter, number, l, n)) return true;
             }
             return false;
         }
 
-        //sets movement behavior for pawn
+        //sets movement behavior for rook
         virtual void set_behavior(Board* b) {
-            //moveB.push_back(new HorizontalMovement(b));
-            //moveB.push_back(new VerticalMovement(b));
+            moveB.push_back(HorizontalMovement(b));
+            moveB.push_back(VerticalMovement(b));
         }
 };
 
