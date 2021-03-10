@@ -20,6 +20,36 @@ class Pawn : public Piece {
             for (int i=0; i<moveB.size(); ++i) {
                 if (moveB[i]->move(letter, number, l, n)) return true;
             }
+
+            //if pawn wants to move 2 up or down
+            if (abs(n-number)==2 && l-letter==0) {
+                if (color=='b' && number=='7') {
+                    char tempL=letter;
+                    char tempN=number;
+                    if (moveB[1]->move(letter, number, letter, number-1) && moveB[1]->move(letter, number, letter, number-1)) {
+                        return true;
+                    } else {
+                        color='w';
+                        for (int i=1; i<=tempN-number; ++i) {
+                            moveB[1]->move(letter, number, letter, number+1);
+                        }
+                        color='b';
+                    }
+                } else if (color=='w' && number=='2') {
+                    char tempL=letter;
+                    char tempN=number;
+                    if (moveB[1]->move(letter, number, letter, number+1) && moveB[1]->move(letter, number, letter, number+1)) {
+                        return true;
+                    } else {
+                        color='b';
+                        for (int i=1; i<=number-tempN; ++i) {
+                            moveB[1]->move(letter, number, letter, number-1);
+                        }
+                        color='w';
+                    }
+                }
+            }
+
             return false;
         }
 
