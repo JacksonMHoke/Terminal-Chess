@@ -44,7 +44,11 @@ int main () {
         do {
             cout << "Input quit or white's move in format:\n\tstarting position, ending position\n\tie: a2 a3\n";
             getline(cin, input);
-            if (input=="quit") return 0;
+            if (input=="quit") {
+                delete b;
+                delete fact;
+                return 0;
+            }
 
             //if input is valid
             if (input[0]<'a' || input[0]>'h' || input[1]<'1' || input[1]>'8' || input[3]<'a' || input[3]>'h' || input[4]<'1' || input[4]>'8') {
@@ -75,7 +79,11 @@ int main () {
         do {
             cout << "Input quit or black's move in format:\n\tstarting position, ending position\n\tie: a2 a3\n";
             getline(cin, input);
-            if (input=="quit") return 0;
+            if (input=="quit") {
+                delete b;
+                delete fact;
+                return 0;
+            }
 
             //if input is valid
             if (input[0]<'a' || input[0]>'h' || input[1]<'1' || input[1]>'8' || input[3]<'a' || input[3]>'h' || input[4]<'1' || input[4]>'8') {
