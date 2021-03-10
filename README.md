@@ -34,7 +34,24 @@
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+ > Open terminal and run 
+ > ```c++
+ > git clone https://github.com/cs100/final-project-wyoun005-glee139-jhoke001.git
+ > ```
+ > Then run
+ > ```c++
+ > cmake3 .
+ > make
+ > ./game
+ > ```
+ > Usage:
+ This game is a local 2p terminal chess game that continues until one player gets checkmated.(checkmate not implemented yet)\
+ Select which board you want to set up by typing a or b(a for classic, b for hoard)\
+ Asterisks are empty empty spots on the board, capital letters are white pieces and lowercase letters are black pieces.
+ To move a piece, type in the starting position(ie. a2) followed by a space and then the ending position(ie. a3)\
+  For example: "b2 b3" moves the pawn on b2 to b3 on a classic board.\
+  columns are labeled a-h, and rows are labeled 1-8 starting at the bottom left\
+  When you want to exit, type quit.
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
