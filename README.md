@@ -15,15 +15,6 @@
 
 ## Class Diagram
 ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/Chess_Diagram.png)
- 
- > ## Phase III
- > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
- > * Before the meeting you should perform a sprint plan like you did in Phase II
- > * In the meeting with your TA you will discuss: 
- >   - How effective your last sprint was (each member should talk about what they did)
- >   - Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- >   - Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- >   - What tasks you are planning for this next sprint.
 
  > ## Final deliverable
  > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
@@ -32,7 +23,18 @@
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ > This is choosing which type of board to set up.\
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input1.png)\
+ > This is a picture of the set up classic board chosen from part 1\
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/board1.png)\
+ > This is a picture of the input instructions given when inputting a move for white\
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input2.png)\
+ > This is a picture of an example move typed into the terminal\
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input3.png)\
+ > This is a picture of the board after that example move was executed\
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/board2.png)\
+ > This is a picture of the input instructions for blacks turn\
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input4.png)
  ## Installation/Usage
  > Open terminal and run 
  > ```c++
@@ -53,5 +55,5 @@
   columns are labeled a-h, and rows are labeled 1-8 starting at the bottom left\
   When you want to exit, type quit.
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > We used google test to test our code. We tested each function seperately for boundary cases and normal functionality and played a game of chess all the way through to see if it worked. We ran valgrind to make sure that there were no memory leaks.
  
