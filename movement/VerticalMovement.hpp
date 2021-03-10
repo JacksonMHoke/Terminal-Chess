@@ -16,7 +16,7 @@ public:
 			// downwards movement
 			if(((l1 - l2) == 0) && ((n1 - n2) > 0)){
 				// check if anything interferes
-				for(int i = 1; i < (n1 - n2); ++i) {
+				for(int i = 1; i < abs(n1 - n2)-1; ++i) {
 					if(board->getCell(l1, n1 - i) != nullptr) { return false; }
 				}
 				//move to destination, if check revert
@@ -34,7 +34,7 @@ public:
 			// upwards movement
 			else if (((l1 - l2) == 0) && ((n1 - n2) < 0)) {
 				// check if anything interferes
-				for(int i = 1; i < abs(n1 - n2); ++i) {
+				for(int i = 1; i < abs(n1 - n2)-1; ++i) {
 					if(board->getCell(l1, n1 + i) != nullptr) { return false; }
 				}
 				//move to destination, if check revert
