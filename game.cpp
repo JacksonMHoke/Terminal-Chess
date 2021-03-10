@@ -34,7 +34,7 @@ int main () {
         }
     } while (true);
     //use factory chosen to creat board
-
+    cin.clear();
     b=fact->createBoard();
     char l1,l2,n1,n2;
     //loop while accepting moves and alternating players
