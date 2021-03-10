@@ -1,4 +1,7 @@
 #include "board.hpp"
+#include <iostream>
+#include <sstream>
+using std::stringstream;
 
 //constructor
 Board::Board()  {
@@ -73,4 +76,21 @@ void Board::drawBoard(char c) {
         cout << "\33[49m" << endl;
     }
     cout << "\33[49m" << "\33[39m" << endl;
+}
+//for testing, removed the coloring to make things easier to test
+void Board::drawBoard2(char c, stringstream& os) {
+    for (int i=0; i<board.size(); ++i) {
+        for (int j=0; j<board[0].size(); ++j) {
+            if (c=='w') {
+                if (board[board.size()-1-i][j]==nullptr) os << " ";
+                else {
+                    os << board[board.size()-1-i][j]->getPiece();
+                }
+            } else { //if black is moving next
+                if (board[i][board[0].size()-1-j]==nullptr) os << " ";
+                else os << board[i][board[0].size()-1-i]->getPiece();
+            }
+        }
+        os << "\n";
+    }
 }

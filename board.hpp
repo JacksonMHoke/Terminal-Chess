@@ -4,7 +4,10 @@
 #include "pieces/piece.hpp"
 #include <vector>
 #include <iostream>
+#include <sstream>
 
+using std::stringstream;
+using std::ostream;
 using std::vector;
 using std::cout;
 using std::endl;
@@ -32,6 +35,7 @@ class Board {
         //draws board according to color of player moving
         //TODO::implement colors in command line
         void drawBoard(char c);
+        void drawBoard2(char c, stringstream& os);
 };
 
 #endif //__BOARD_H_
