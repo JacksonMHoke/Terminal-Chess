@@ -23,7 +23,7 @@ public:
 		if (n1>n2) d=true;
 
 		// if the coordinates given are a diagonal and are within the bounds
-		if(((l1 - l2) == (n1 - n2)) && (l2 <= 'h' && l2 >= 'a') && (n2 <= '8' && n2 >= '1')) {
+		if((abs(l1 - l2) == abs(n1 - n2)) && (l2 <= 'h' && l2 >= 'a') && (n2 <= '8' && n2 >= '1')) {
 			// check if there is anything in the way of the diagonal move
 			for(int i = 1; i <= abs(l1 - l2); ++i) {
 				if(u && r && board->getCell(l1 + i, n1 + i) != nullptr) { return false; }

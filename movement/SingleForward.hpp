@@ -17,7 +17,7 @@ public:
 					if (board->getCell(l2,n2)!=nullptr) temp=board->getCell(l2,n2);
 					board->setCellNull(l2,n2); //to avoid deleting piece at that place
 					board->move(l1, n1, l2, n2);
-					if (isCheck(board->getCell(l1, n1)->getColor())) {
+					if (isCheck(board->getCell(l2, n2)->getColor())) {
 						board->move(l2,n2,l1,n1);
 						board->addPiece(temp);
 						return false;

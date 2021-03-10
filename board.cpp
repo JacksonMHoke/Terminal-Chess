@@ -12,6 +12,7 @@ Board::Board()  {
 }
 
 void Board::addPiece(Piece* p)  {
+    if (!p) return;
     board[p->getRow()-'1'][p->getCol()-'a']=p;
 }
 
@@ -57,4 +58,5 @@ void Board::drawBoard(char c) {
         }
         cout << endl;
     }
+    cout << endl;
 }
