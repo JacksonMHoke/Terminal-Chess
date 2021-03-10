@@ -56,15 +56,21 @@ void Board::drawBoard(char c) {
     for (int i=0; i<board.size(); ++i) {
         for (int j=0; j<board[0].size(); ++j) {
             //if white is moving next
+            if (i%2==j%2) cout << "\33[44m";
+            else cout << "\33[42m";
             if (c=='w') {
-                if (board[board.size()-1-i][j]==nullptr) cout << "*";
-                else cout << board[board.size()-1-i][j]->getPiece();
+                if (board[board.size()-1-i][j]==nullptr) cout << " ";
+                else {
+                    if (board[board.size()-1-i][j]->getColor()=='b') cout << "\33[30m";
+                    else cout << "\33[37m";
+                    cout << board[board.size()-1-i][j]->getPiece();
+                }
             } else { //if black is moving next
-                if (board[i][board[0].size()-1-j]==nullptr) cout << "*";
+                if (board[i][board[0].size()-1-j]==nullptr) cout << " ";
                 else cout << board[i][board[0].size()-1-i]->getPiece();
             }
         }
-        cout << endl;
+        cout << "\33[49m" << endl;
     }
-    cout << endl;
+    cout << "\33[49m" << "\33[39m" << endl;
 }

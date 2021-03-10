@@ -34,7 +34,6 @@ int main () {
         }
     } while (true);
     //use factory chosen to creat board
-    cin.clear();
     b=fact->createBoard();
     char l1,l2,n1,n2;
     //loop while accepting moves and alternating players
@@ -43,6 +42,7 @@ int main () {
         b->drawBoard('w');
         do {
             cout << "Input quit or white's move in format:\n\tstarting position, ending position\n\tie: a2 a3\n";
+            cin.sync();
             getline(cin, input);
             if (input=="quit") {
                 delete b;
