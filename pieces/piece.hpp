@@ -25,11 +25,7 @@ class Piece {
             color=c;
         }
 
-        virtual ~Piece() {
-            for (auto mb : moveB) {
-                delete mb;
-            }
-        }
+        virtual ~Piece();
 
         //adds the corresponding movement behaviors to the moveB vector
         virtual void set_behavior(Board* b)=0;
