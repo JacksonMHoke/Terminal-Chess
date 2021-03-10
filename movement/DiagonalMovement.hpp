@@ -12,8 +12,6 @@ public:
 		//if there is same color piece at end coords
 		if (board->getCell(l2,n2)!=nullptr && board->getCell(l1, n1)->getColor()==board->getCell(l2, n2)->getColor()) return false;
 
-		cout << "after color checker" << endl;
-
 		//accounts for direction piece is moving in
 		bool l=false;
 		bool r=false;
@@ -50,8 +48,5 @@ public:
 		return false;
 	}
 };
-
-
-
 
 #endif

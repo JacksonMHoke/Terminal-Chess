@@ -14,7 +14,7 @@ class Board {
         vector<vector<Piece*>> board;
     public:
         Board();
-
+        ~Board();
         //adds the piece into the board
             //uses info inside piece such as position
         void addPiece(Piece* p);

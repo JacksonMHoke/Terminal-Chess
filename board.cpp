@@ -11,6 +11,14 @@ Board::Board()  {
     }
 }
 
+Board::~Board() {
+    for (int i=0; i<board.size(); ++i) {
+        for (int j=0; j<board[i].size(); ++j) {
+            delete board[i][j];
+        }
+    }
+}
+
 void Board::addPiece(Piece* p)  {
     if (!p) return;
     board[p->getRow()-'1'][p->getCol()-'a']=p;
