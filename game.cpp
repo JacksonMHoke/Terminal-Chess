@@ -37,10 +37,13 @@ int main () {
 
     b=fact->createBoard();
 
-    b->getCell('f','2')->move('f','3');
+    b->getCell('e','7')->move('e','6');
     b->drawBoard('w');
 
-    b->getCell('e','7')->move('e','6');
+    b->getCell('h','2')->move('h','3');
+    b->drawBoard('w');
+
+    b->getCell('h','3')->move('h','4');
     b->drawBoard('w');
 
     b->getCell('a','2')->move('a','3');
