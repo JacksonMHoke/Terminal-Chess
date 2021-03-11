@@ -9,7 +9,7 @@ ADD_EXECUTABLE(game
 )
 
 ADD_EXECUTABLE(test
-    test.cpp board.cpp movement/MovementBehavior.cpp pieces/piece.cpp
+    tests/test.cpp board.cpp movement/MovementBehavior.cpp pieces/piece.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
