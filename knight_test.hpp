@@ -126,6 +126,11 @@ TEST(KNIGHT, NTakeOpPiece){
 	EXPECT_EQ(board->getCell('d','7')->getPiece(),'N');
 	EXPECT_EQ(board->getCell('d','7')->getColor(),'w');
 }
-
+TEST(KNIGHT, NCheck){
+	Board* board = new Board();
+	board->addPiece(new Knight('e', '4', 'b', 'n',   board));
+	board->addPiece(new King  ('e', '6', 'w', 'K',   board));
+	EXPECT_EQ(board->getCell('e','4')->move('c','5'),true);
+}
 
 #endif

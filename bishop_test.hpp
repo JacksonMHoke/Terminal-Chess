@@ -81,4 +81,12 @@ TEST(BISHOP, BTakeOPPiece){
 	EXPECT_EQ(board->getCell('d','2')->getPiece(),'b');
 	EXPECT_EQ(board->getCell('d','2')->getColor(),'b');
 }
+
+//check
+TEST(BISHOP, BCheck){
+	Board* board = new Board();
+	board->addPiece(new Bishop('h', '8', 'b', 'b',   board));
+	board->addPiece(new King  ('e', '7', 'w', 'K',   board));
+	EXPECT_EQ(board->getCell('h','8')->move('f','6'),true);
+}
 #endif

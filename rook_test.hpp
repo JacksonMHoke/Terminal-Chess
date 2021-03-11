@@ -74,7 +74,7 @@ TEST(ROOK, RMoveToSameColorPiece){
 	Board* board = new Board();
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
-	EXPECT_EQ(board->getCell('a','1')->move('a','3'),false);
+	EXPECT_EQ(board->getCell('a','1')->move('a','2'),false);
 	delete board;
 	delete fact;
 }
@@ -88,9 +88,18 @@ TEST(ROOK, RTakeOpPiece){
 	board->getCell('a','1')->move('a','3');
 	board->getCell('a','3')->move('b','3');
 	board->getCell('b','3')->move('b','7');
-	EXPECT_EQ(board->getCell('c','5')->getPiece(),'R');
-	EXPECT_EQ(board->getCell('c','5')->getColor(),'w');
+	EXPECT_EQ(board->getCell('b','7')->getPiece(),'R');
+	EXPECT_EQ(board->getCell('b','7')->getColor(),'w');
 	delete board;
 	delete fact;
 }
+
+//check
+TEST(ROOK, RCheck){
+	Board* board = new Board();
+	board->addPiece(new Rook  ('h', '8', 'b', 'r',   board));
+	board->addPiece(new King  ('e', '6', 'w', 'K',   board));
+	EXPECT_EQ(board->getCell('h','8')->move('h','6'),true);
+}
+
 #endif

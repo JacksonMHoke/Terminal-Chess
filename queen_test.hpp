@@ -166,4 +166,11 @@ TEST(QUEEN, QTakeOpPiece){
 	delete board;
 	delete fact;
 }
+
+TEST(QUEEN, RCheck){
+	Board* board = new Board();
+	board->addPiece(new Queen ('f', '2', 'b', 'q',   board));
+	board->addPiece(new King  ('e', '6', 'w', 'K',   board));
+	EXPECT_EQ(board->getCell('f','2')->move('a','2'),true);
+}
 #endif
