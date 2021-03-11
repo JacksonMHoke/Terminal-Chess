@@ -60,3 +60,19 @@ void Board::drawBoard(char c) {
     }
     cout << endl;
 }
+
+void Board::drawBoard(std::ostream& out,char c) {
+    for (int i=0; i<board.size(); ++i) {
+        for (int j=0; j<board[0].size(); ++j) {
+            
+            if (c=='w') {
+                if (board[board.size()-1-i][j]==nullptr) out << "*";
+                else out << board[board.size()-1-i][j]->getPiece();
+            } else { 
+                if (board[i][board[0].size()-1-j]==nullptr) out << "*";
+                else out << board[i][board[0].size()-1-i]->getPiece();
+            }
+        }
+        out << endl;
+    }
+}

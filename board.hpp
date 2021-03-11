@@ -32,6 +32,7 @@ class Board {
         //draws board according to color of player moving
         //TODO::implement colors in command line
         void drawBoard(char c);
+	void drawBoard(std::ostream& out,char c);
 };
 
 #endif //__BOARD_H_
