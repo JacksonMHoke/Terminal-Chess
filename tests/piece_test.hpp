@@ -156,6 +156,17 @@ TEST(Piece, King) {
     ASSERT_EQ(false, b->getCell('a','1')->move('b','2'));
     ASSERT_EQ(true, b->getCell('a','1')->move('b','1'));
     ASSERT_EQ(true, b->getCell('b','1')->move('a','2'));
+
+    delete b;
+}
+
+TEST(TestTest, createBoard) {
+    BoardFactory* fact = new ClassicBoardFactory();
+    Board* b = fact->createBoard();
+    EXPECT_EQ(true, true);
+
+    delete b;
+    delete fact;
 }
 
 #endif //PIECE_TEST_HPP

@@ -12,6 +12,7 @@
 class HoardBoardFactory : public BoardFactory {
 	public:
 		HoardBoardFactory() : BoardFactory() {}
+		~HoardBoardFactory() {}
 		virtual Board* createBoard(){
 			Board* board = new Board();
 			board->addPiece(new Pawn  ('a', '1', 'w', 'P', board));

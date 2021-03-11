@@ -13,6 +13,7 @@
 class ClassicBoardFactory : public BoardFactory {
 	public:
 		ClassicBoardFactory() : BoardFactory() {}
+		~ClassicBoardFactory() {}
 		virtual Board* createBoard(){
 			Board* board = new Board();
 			board->addPiece(new Rook  ('a', '1', 'w', 'R', board));
