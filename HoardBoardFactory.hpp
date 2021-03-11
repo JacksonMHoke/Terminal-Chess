@@ -1,6 +1,6 @@
 #ifndef HOARDBOARDFACTORY_HPP
 #define HOARDBOARDFACTORY_HPP
-#include "Board.hpp"
+#include "board.hpp"
 #include "pieces/pawn.hpp"
 #include "pieces/bishop.hpp"
 #include "pieces/king.hpp"
