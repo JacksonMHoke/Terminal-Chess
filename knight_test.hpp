@@ -20,6 +20,8 @@ TEST(KNIGHT, NMoveUpLeft){
 	board->getCell('b','1')->move('a','3');
 	EXPECT_EQ(board->getCell('a','3')->getPiece(),'N');
 	EXPECT_EQ(board->getCell('a','3')->getColor(),'w');
+	delete board;
+	delete fact;
 }
 
 //upright
@@ -30,6 +32,8 @@ TEST(KNIGHT, NMoveUpRight){
 	board->getCell('b','1')->move('c','3');
 	EXPECT_EQ(board->getCell('c','3')->getPiece(),'N');
 	EXPECT_EQ(board->getCell('c','3')->getColor(),'w');
+	delete board;
+	delete fact;
 }
 
 //rightup
@@ -41,6 +45,8 @@ TEST(KNIGHT, NMoveRightUp){
 	board->getCell('c','3')->move('e','4');
 	EXPECT_EQ(board->getCell('e','4')->getPiece(),'N');
 	EXPECT_EQ(board->getCell('e','4')->getColor(),'w');
+	delete board;
+	delete fact;
 }
 
 //rightdown
@@ -53,6 +59,8 @@ TEST(KNIGHT, NMoveRightDown){
 	board->getCell('e','4')->move('g','3');
 	EXPECT_EQ(board->getCell('g','3')->getPiece(),'N');
 	EXPECT_EQ(board->getCell('g','3')->getColor(),'w');
+	delete board;
+	delete fact;
 }
 
 //downright
@@ -66,6 +74,8 @@ TEST(KNIGHT, NMoveDownRight){
 	board->getCell('e','4')->move('f','2');
 	EXPECT_EQ(board->getCell('f','2')->getPiece(),'N');
 	EXPECT_EQ(board->getCell('f','2')->getColor(),'w');
+	delete board;
+	delete fact;
 }
 
 
@@ -80,6 +90,8 @@ TEST(KNIGHT, NMoveDownLeft){
 	board->getCell('e','4')->move('d','2');
 	EXPECT_EQ(board->getCell('d','2')->getPiece(),'N');
 	EXPECT_EQ(board->getCell('d','2')->getColor(),'w');
+	delete board;
+	delete fact;
 }
 
 //leftdown
@@ -92,6 +104,8 @@ TEST(KNIGHT, NMoveLeftDown){
 	board->getCell('e','4')->move('c','3');
 	EXPECT_EQ(board->getCell('c','3')->getPiece(),'N');
 	EXPECT_EQ(board->getCell('c','3')->getColor(),'w');
+	delete board;
+	delete fact;
 }
 
 //leftup
@@ -104,6 +118,8 @@ TEST(KNIGHT, NMoveLeftUp){
 	board->getCell('e','4')->move('c','5');
 	EXPECT_EQ(board->getCell('c','5')->getPiece(),'N');
 	EXPECT_EQ(board->getCell('c','5')->getColor(),'w');
+	delete board;
+	delete fact;
 }
 
 //same color
@@ -112,6 +128,8 @@ TEST(KNIGHT, NSameColor){
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	EXPECT_EQ(board->getCell('b','1')->move('d','2'),false);
+	delete board;
+	delete fact;
 }
 
 //take op piece
@@ -125,6 +143,8 @@ TEST(KNIGHT, NTakeOpPiece){
 	board->getCell('f','6')->move('d','7');
 	EXPECT_EQ(board->getCell('d','7')->getPiece(),'N');
 	EXPECT_EQ(board->getCell('d','7')->getColor(),'w');
+	delete board;
+	delete fact;
 }
 TEST(KNIGHT, NCheck){
 	Board* board = new Board();

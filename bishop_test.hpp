@@ -22,6 +22,8 @@ TEST(BISHOP, BMOVESE){
 	board->getCell('f','8')->move('h','6');
 	EXPECT_EQ(board->getCell('h','6')->getPiece(),'b');
 	EXPECT_EQ(board->getCell('h','6')->getColor(),'b');
+	delete board;
+	delete fact;
 }
 
 //movesSW
@@ -34,6 +36,8 @@ TEST(BISHOP, BMOVESW){
 	board->getCell('h','6')->move('f','4');
 	EXPECT_EQ(board->getCell('f','4')->getPiece(),'b');
 	EXPECT_EQ(board->getCell('f','4')->getColor(),'b');
+	delete board;
+	delete fact;
 }
 
 //movesNE
@@ -47,6 +51,8 @@ TEST(BISHOP, BMOVENE){
 	board->getCell('f','4')->move('h','6');
 	EXPECT_EQ(board->getCell('h','6')->getPiece(),'b');
 	EXPECT_EQ(board->getCell('h','6')->getColor(),'b');
+	delete board;
+	delete fact;
 }
 
 //movesNW
@@ -59,7 +65,8 @@ TEST(BISHOP, BMOVENW){
 	board->getCell('h','6')->move('f','8');
 	EXPECT_EQ(board->getCell('f','8')->getPiece(),'b');
 	EXPECT_EQ(board->getCell('f','8')->getColor(),'b');
-
+	delete board;
+	delete fact;
 }
 
 //if same piece return false
@@ -68,6 +75,8 @@ TEST(BISHOP, BMoveToSameColorSpot){
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	EXPECT_EQ(board->getCell('f','8')->move('g','7'),false);
+	delete board;
+	delete fact;
 }
 
 //if opponent piece take
@@ -80,6 +89,8 @@ TEST(BISHOP, BTakeOPPiece){
 	board->getCell('h','6')->move('d','2');
 	EXPECT_EQ(board->getCell('d','2')->getPiece(),'b');
 	EXPECT_EQ(board->getCell('d','2')->getColor(),'b');
+	delete board;
+	delete fact;
 }
 
 //check
