@@ -13,7 +13,7 @@
 #include <vector>
 
 TEST(ROOK, RMoveNorth){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('a','2')->move('a','3');
@@ -26,7 +26,7 @@ TEST(ROOK, RMoveNorth){
 }
 
 TEST(ROOK, RMoveEast){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('a','2')->move('a','3');
@@ -40,7 +40,7 @@ TEST(ROOK, RMoveEast){
 }
 
 TEST(ROOK, RMoveWest){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('a','2')->move('a','3');
@@ -56,7 +56,7 @@ TEST(ROOK, RMoveWest){
 }
 
 TEST(ROOK, RMoveSouth){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('a','2')->move('a','3');
@@ -70,7 +70,7 @@ TEST(ROOK, RMoveSouth){
 }
 
 TEST(ROOK, RMoveToSameColorPiece){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	EXPECT_EQ(board->getCell('a','1')->move('a','2'),false);
@@ -79,7 +79,7 @@ TEST(ROOK, RMoveToSameColorPiece){
 }
 
 TEST(ROOK, RTakeOpPiece){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('a','2')->move('a','3');
@@ -95,7 +95,7 @@ TEST(ROOK, RTakeOpPiece){
 
 //check
 TEST(ROOK, RCheck){
-	Board* board = new Board();
+	Board* board=new Board();
 	board->addPiece(new Rook  ('h', '8', 'b', 'r',   board));
 	board->addPiece(new King  ('e', '7', 'w', 'K',   board));
 	EXPECT_EQ(board->getCell('e','7')->move('e','8'),false);

@@ -14,7 +14,7 @@
 
 //upleft
 TEST(KNIGHT, NMoveUpLeft){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('b','1')->move('a','3');
@@ -26,7 +26,7 @@ TEST(KNIGHT, NMoveUpLeft){
 
 //upright
 TEST(KNIGHT, NMoveUpRight){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('b','1')->move('c','3');
@@ -38,7 +38,7 @@ TEST(KNIGHT, NMoveUpRight){
 
 //rightup
 TEST(KNIGHT, NMoveRightUp){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('b','1')->move('c','3');
@@ -51,7 +51,7 @@ TEST(KNIGHT, NMoveRightUp){
 
 //rightdown
 TEST(KNIGHT, NMoveRightDown){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('b','1')->move('c','3');
@@ -65,7 +65,7 @@ TEST(KNIGHT, NMoveRightDown){
 
 //downright
 TEST(KNIGHT, NMoveDownRight){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('b','1')->move('c','3');
@@ -81,7 +81,7 @@ TEST(KNIGHT, NMoveDownRight){
 
 //downleft
 TEST(KNIGHT, NMoveDownLeft){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('b','1')->move('c','3');
@@ -96,7 +96,7 @@ TEST(KNIGHT, NMoveDownLeft){
 
 //leftdown
 TEST(KNIGHT, NMoveLeftDown){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('b','1')->move('c','3');
@@ -110,7 +110,7 @@ TEST(KNIGHT, NMoveLeftDown){
 
 //leftup
 TEST(KNIGHT, NMoveLeftUp){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('b','1')->move('c','3');
@@ -124,7 +124,7 @@ TEST(KNIGHT, NMoveLeftUp){
 
 //same color
 TEST(KNIGHT, NSameColor){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	EXPECT_EQ(board->getCell('b','1')->move('d','2'),false);
@@ -134,7 +134,7 @@ TEST(KNIGHT, NSameColor){
 
 //take op piece
 TEST(KNIGHT, NTakeOpPiece){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('b','1')->move('c','3');
@@ -147,7 +147,7 @@ TEST(KNIGHT, NTakeOpPiece){
 	delete fact;
 }
 TEST(KNIGHT, NCheck){
-	Board* board = new Board();
+	Board* board=new Board();
 	board->addPiece(new Knight('e', '4', 'b', 'n',   board));
 	board->addPiece(new King  ('e', '6', 'w', 'K',   board));
 	EXPECT_EQ(board->getCell('e','6')->move('f','6'),false);

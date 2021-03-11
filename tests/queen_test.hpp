@@ -14,7 +14,7 @@
 
 //north
 TEST(QUEEN, QMoveNorth){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('d','2')->move('d','3');
@@ -28,7 +28,7 @@ TEST(QUEEN, QMoveNorth){
 
 //NorthEast
 TEST(QUEEN, QMoveNorthEast){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('d','2')->move('d','3');
@@ -43,7 +43,7 @@ TEST(QUEEN, QMoveNorthEast){
 
 //East
 TEST(QUEEN, QMoveEast){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('d','2')->move('d','3');
@@ -59,7 +59,7 @@ TEST(QUEEN, QMoveEast){
 
 //SouthEast
 TEST(QUEEN, QMoveSouthEast){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('d','2')->move('d','3');
@@ -75,7 +75,7 @@ TEST(QUEEN, QMoveSouthEast){
 
 //South
 TEST(QUEEN, QMoveSouth){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('d','2')->move('d','3');
@@ -91,7 +91,7 @@ TEST(QUEEN, QMoveSouth){
 
 //SouthWest
 TEST(QUEEN, QMoveSouthWest){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('d','2')->move('d','3');
@@ -107,7 +107,7 @@ TEST(QUEEN, QMoveSouthWest){
 
 //West
 TEST(QUEEN, QMoveWest){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('d','2')->move('d','3');
@@ -124,7 +124,7 @@ TEST(QUEEN, QMoveWest){
 
 //NorthWest
 TEST(QUEEN, QMoveNorthWest){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('d','2')->move('d','3');
@@ -143,7 +143,7 @@ TEST(QUEEN, QMoveNorthWest){
 
 //queen same color
 TEST(QUEEN, QMoveToSameColorPiece){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	EXPECT_EQ(board->getCell('d','1')->move('e','1'),false);
@@ -153,7 +153,7 @@ TEST(QUEEN, QMoveToSameColorPiece){
 
 //op color take
 TEST(QUEEN, QTakeOpPiece){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('d','2')->move('d','3');
@@ -168,7 +168,7 @@ TEST(QUEEN, QTakeOpPiece){
 }
 
 TEST(QUEEN, RCheck){
-	Board* board = new Board();
+	Board* board=new Board();
 	board->addPiece(new Queen ('f', '2', 'b', 'q',   board));
 	board->addPiece(new King  ('e', '6', 'w', 'K',   board));
 	EXPECT_EQ(board->getCell('e','6')->move('f','6'),false);

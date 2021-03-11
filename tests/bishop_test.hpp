@@ -15,7 +15,7 @@
 
 //moves SE
 TEST(BISHOP, BMOVESE){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('g','7')->move('g','6');
@@ -28,7 +28,7 @@ TEST(BISHOP, BMOVESE){
 
 //movesSW
 TEST(BISHOP, BMOVESW){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('g','7')->move('g','6');
@@ -42,7 +42,7 @@ TEST(BISHOP, BMOVESW){
 
 //movesNE
 TEST(BISHOP, BMOVENE){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('g','7')->move('g','6');
@@ -57,7 +57,7 @@ TEST(BISHOP, BMOVENE){
 
 //movesNW
 TEST(BISHOP, BMOVENW){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('g','7')->move('g','6');
@@ -71,7 +71,7 @@ TEST(BISHOP, BMOVENW){
 
 //if same piece return false
 TEST(BISHOP, BMoveToSameColorSpot){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	EXPECT_EQ(board->getCell('f','8')->move('g','7'),false);
@@ -81,7 +81,7 @@ TEST(BISHOP, BMoveToSameColorSpot){
 
 //if opponent piece take
 TEST(BISHOP, BTakeOPPiece){
-	Board* board = new Board();
+	Board* board;
 	BoardFactory* fact = new ClassicBoardFactory();
 	board=fact->createBoard();
 	board->getCell('g','7')->move('g','6');
@@ -95,7 +95,7 @@ TEST(BISHOP, BTakeOPPiece){
 
 //check
 TEST(BISHOP, BCheck){
-	Board* board = new Board();
+	Board* board=new Board();
 	board->addPiece(new Bishop('g', '7', 'b', 'b',   board));
 	board->addPiece(new King  ('e', '7', 'w', 'K',   board));
 	EXPECT_EQ(board->getCell('e','7')->move('f','6'),false);

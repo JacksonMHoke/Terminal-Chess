@@ -14,18 +14,18 @@
 #include <sstream>
 
 TEST(CLASSICBOARD, ClassicWhite){
-        Board* b = new Board();
-        BoardFactory* fact = new ClassicBoardFactory();
-        std::stringstream ss;
-        b = fact->createBoard();
-        b->drawBoard(ss, 'w');
-        EXPECT_EQ(ss.str(),"rnbqkbnr\npppppppp\n********\n********\n********\n********\nPPPPPPPP\nRNBQKBNR\n");
-        delete b;
+    Board* b;
+    BoardFactory* fact = new ClassicBoardFactory();
+    std::stringstream ss;
+    b = fact->createBoard();
+    b->drawBoard(ss, 'w');
+    EXPECT_EQ(ss.str(),"rnbqkbnr\npppppppp\n********\n********\n********\n********\nPPPPPPPP\nRNBQKBNR\n");
+    delete b;
 	delete fact;
 }
 
 //TEST(CLASSICBOARD, ClassicBlack){
-//	Board* b = new Board();;
+//	Board* b;
 //	BoardFactory* fact = new ClassicBoardFactory();
 //	std::stringstream ss;
 //   b = fact->createBoard();

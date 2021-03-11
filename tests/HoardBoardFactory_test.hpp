@@ -14,7 +14,7 @@
 #include <sstream>
 
 TEST(HOARDBOARD, HoardWhite){
-	Board* b = new Board();
+	Board* b;
 	BoardFactory* fact= new HoardBoardFactory();
 	std::stringstream ss;
     b = fact->createBoard();
@@ -25,7 +25,7 @@ TEST(HOARDBOARD, HoardWhite){
 }
 
 //TEST(HOARDBOARD, HoardBlack){
-//	Board* b = new Board();
+//	Board* b;
 //	BoardFactory* fact = new HoardBoardFactory;
 //	std::stringstream ss;
 //   b = fact->createBoard();

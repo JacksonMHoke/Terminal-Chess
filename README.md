@@ -16,44 +16,50 @@
 ## Class Diagram
 ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/Chess_Diagram.png)
 
- > ## Final deliverable
- > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
- 
  ## Screenshots
  > This is choosing which type of board to set up.\
  > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input1.png)\
  > This is a picture of the set up classic board chosen from part 1\
- > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/board1.png)\
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/board10.png)\
  > This is a picture of the input instructions given when inputting a move for white\
  > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input2.png)\
  > This is a picture of an example move typed into the terminal\
  > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input3.png)\
  > This is a picture of the board after that example move was executed\
- > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/board2.png)\
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/board20.png)\
  > This is a picture of the input instructions for blacks turn\
- > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input4.png)
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input4.png)\
+ > This is a picture of the input instructions when an invalid move is inputted\
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input5.png)
  ## Installation/Usage
  > Open terminal and run 
- > ```c++
- > git clone https://github.com/cs100/final-project-wyoun005-glee139-jhoke001.git
  > ```
- > Then run
- > ```c++
+ > git clone --recurse-submodules https://github.com/cs100/final-project-wyoun005-glee139-jhoke001.git
+ > ```
+ > git clone will copy the files from this git repository onto your computer\
+ > Then run:
+ > ```
+ > cd final-project-wyoun005-glee139-jhoke001/
+ > ```
+ > This will navigate to the folder you just downloaded\
+ > Then run:
+ > ```
  > cmake3 .
  > make
+ > ```
+ > To launch the game run
+ > ```
  > ./game
  > ```
- > Usage:
- This game is a local 2p terminal chess game that continues until one player gets checkmated.(checkmate not implemented yet)\
- Select which board you want to set up by typing a or b(a for classic, b for hoard)\
- Asterisks are empty empty spots on the board, capital letters are white pieces and lowercase letters are black pieces.
- To move a piece, type in the starting position(ie. a2) followed by a space and then the ending position(ie. a3)\
-  For example: "b2 b3" moves the pawn on b2 to b3 on a classic board.\
-  columns are labeled a-h, and rows are labeled 1-8 starting at the bottom left\
-  When you want to exit, type quit.
+ > Enjoy!
+ ## Usage
+ > This game is a local 2p terminal chess game that continues until one player gets checkmated.(checkmate not implemented yet)\
+ > Select which board you want to set up by typing a or b(a for classic, b for hoard)\
+ > Asterisks are empty empty spots on the board, capital letters are white pieces and lowercase letters are black pieces.
+ > To move a piece, type in the starting position(ie. a2) followed by a space and then the ending position(ie. a3)\
+ >  For example: "b2 b3" moves the pawn on b2 to b3 on a classic board.\
+ >  columns are labeled a-h, and rows are labeled 1-8 starting at the bottom left\
+ >  When you want to exit, type quit.
  ## Testing
- > We used google test to test our code. We tested each function seperately for boundary cases and normal functionality and played a game of chess all the way through to see if it worked. We ran valgrind to make sure that there were no memory leaks.
+ > We used google test to test our code. We tested each function seperately for boundary cases and normal functionality and played a game of chess all the way through to see if it worked. We ran valgrind to make sure that there were no memory leaks. We tested our code by going through the board class like we do in the game.cpp file. We accessed functions like getCell and addPiece and used the piece getter functions to check whether the move went well.
  
