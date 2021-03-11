@@ -40,7 +40,7 @@
  ## Installation/Usage
  > Open terminal and run 
  > ```c++
- > git clone https://github.com/cs100/final-project-wyoun005-glee139-jhoke001.git
+ > git clone --recurse-submodules https://github.com/cs100/final-project-wyoun005-glee139-jhoke001.git
  > ```
  > Then run
  > ```c++
