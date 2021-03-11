@@ -35,6 +35,7 @@
  > Open terminal and run 
  > ```c++
  > git clone --recurse-submodules https://github.com/cs100/final-project-wyoun005-glee139-jhoke001.git
+ > cd final-project-wyoun005-glee139-jhoke001
  > ```
  > Then run
  > ```c++
