@@ -14,7 +14,7 @@
 #include <sstream>
 
 TEST(CLASSICBOARD, ClassicWhite){
-    Board* b = new Board();
+    Board* b;
     BoardFactory* fact = new ClassicBoardFactory();
     std::stringstream ss;
     b = fact->createBoard();
@@ -25,7 +25,7 @@ TEST(CLASSICBOARD, ClassicWhite){
 }
 
 //TEST(CLASSICBOARD, ClassicBlack){
-//	Board* b = new Board();;
+//	Board* b;
 //	BoardFactory* fact = new ClassicBoardFactory();
 //	std::stringstream ss;
 //   b = fact->createBoard();
