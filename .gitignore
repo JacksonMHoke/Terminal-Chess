@@ -1,0 +1,9 @@
+test
+game
+googletest/
+CMakeCache.txt
+lib/
+CMakeFiles/
+cmake_install.cmake
+Makefile
+build/
