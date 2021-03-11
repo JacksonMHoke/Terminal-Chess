@@ -26,15 +26,17 @@
  > This is choosing which type of board to set up.\
  > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input1.png)\
  > This is a picture of the set up classic board chosen from part 1\
- > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/board1.png)\
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/board10.png)\
  > This is a picture of the input instructions given when inputting a move for white\
  > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input2.png)\
  > This is a picture of an example move typed into the terminal\
  > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input3.png)\
  > This is a picture of the board after that example move was executed\
- > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/board2.png)\
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/board20.png)\
  > This is a picture of the input instructions for blacks turn\
- > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input4.png)
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input4.png)\
+ > This is a picture of the input instructions when an invalid move is inputted\
+ > ![Image of Yaktocat](https://github.com/cs100/final-project-wyoun005-glee139-jhoke001/blob/master/screenshots/input5.png)
  ## Installation/Usage
  > Open terminal and run 
  > ```c++
