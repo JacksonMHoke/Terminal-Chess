@@ -147,7 +147,7 @@ TEST(KNIGHT, NTakeOpPiece){
 	delete fact;
 }
 TEST(KNIGHT, NCheck){
-	Board* board;
+	Board* board=new Board();
 	board->addPiece(new Knight('e', '4', 'b', 'n',   board));
 	board->addPiece(new King  ('e', '6', 'w', 'K',   board));
 	EXPECT_EQ(board->getCell('e','6')->move('f','6'),false);
