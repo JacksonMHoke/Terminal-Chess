@@ -97,8 +97,9 @@ TEST(ROOK, RTakeOpPiece){
 TEST(ROOK, RCheck){
 	Board* board = new Board();
 	board->addPiece(new Rook  ('h', '8', 'b', 'r',   board));
-	board->addPiece(new King  ('e', '6', 'w', 'K',   board));
-	EXPECT_EQ(board->getCell('h','8')->move('h','6'),true);
+	board->addPiece(new King  ('e', '7', 'w', 'K',   board));
+	EXPECT_EQ(board->getCell('e','7')->move('e','8'),false);
+	delete board;
 }
 
 #endif
