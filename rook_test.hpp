@@ -33,7 +33,6 @@ TEST(ROOK, RMoveEast){
 	board->getCell('a','3')->move('a','4');
 	board->getCell('a','1')->move('a','3');
 	board->getCell('a','3')->move('e','3');
-	//EXPECT_EQ(false,board->getCell('e','3')->isCheck());
 	EXPECT_EQ(board->getCell('e','3')->getPiece(),'R');
 	EXPECT_EQ(board->getCell('e','3')->getColor(),'w');
 	delete board;
