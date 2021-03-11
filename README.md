@@ -47,19 +47,19 @@
  > cmake3 .
  > make
  > ```
- > To launch the game run\
+ > To launch the game run
  > ```
  > ./game
  > ```
- > Enjoy!\
+ > Enjoy!
  ## Usage
- This game is a local 2p terminal chess game that continues until one player gets checkmated.(checkmate not implemented yet)\
- Select which board you want to set up by typing a or b(a for classic, b for hoard)\
- Asterisks are empty empty spots on the board, capital letters are white pieces and lowercase letters are black pieces.
- To move a piece, type in the starting position(ie. a2) followed by a space and then the ending position(ie. a3)\
-  For example: "b2 b3" moves the pawn on b2 to b3 on a classic board.\
-  columns are labeled a-h, and rows are labeled 1-8 starting at the bottom left\
-  When you want to exit, type quit.
+ > This game is a local 2p terminal chess game that continues until one player gets checkmated.(checkmate not implemented yet)\
+ > Select which board you want to set up by typing a or b(a for classic, b for hoard)\
+ > Asterisks are empty empty spots on the board, capital letters are white pieces and lowercase letters are black pieces.
+ > To move a piece, type in the starting position(ie. a2) followed by a space and then the ending position(ie. a3)\
+ >  For example: "b2 b3" moves the pawn on b2 to b3 on a classic board.\
+ >  columns are labeled a-h, and rows are labeled 1-8 starting at the bottom left\
+ >  When you want to exit, type quit.
  ## Testing
  > We used google test to test our code. We tested each function seperately for boundary cases and normal functionality and played a game of chess all the way through to see if it worked. We ran valgrind to make sure that there were no memory leaks. We tested our code by going through the board class like we do in the game.cpp file. We accessed functions like getCell and addPiece and used the piece getter functions to check whether the move went well.
  
