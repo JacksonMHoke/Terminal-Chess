@@ -95,7 +95,7 @@ TEST(BISHOP, BTakeOPPiece){
 
 //check
 TEST(BISHOP, BCheck){
-	Board* board;
+	Board* board=new Board();
 	board->addPiece(new Bishop('g', '7', 'b', 'b',   board));
 	board->addPiece(new King  ('e', '7', 'w', 'K',   board));
 	EXPECT_EQ(board->getCell('e','7')->move('f','6'),false);
